@@ -25,38 +25,44 @@ public class dimensionsTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        DimensionsManager _DM = _gameManager.GetComponent<DimensionsManager>();
-        _DM.DimensionsDirection = _wantedDimension;
-        _DM.xDimension = _xAllowed;
-        _DM.yDimestion = _yAllowed;
-        _DM.zDimestion = _zAllowed;
-        _gameManager.GetComponent<GameManager>().globalDimensionsUpdate();
-        _gameManager.GetComponent<GameManager>().updateCamera(cameraDistance, cameraAltitude);
-        _player.GetComponent<PlayerSight>().LookAtCamera(_lookAtCamera);
+        if (other.tag == "Player")
+        {
+            DimensionsManager _DM = _gameManager.GetComponent<DimensionsManager>();
+            _DM.DimensionsDirection = _wantedDimension;
+            _DM.xDimension = _xAllowed;
+            _DM.yDimestion = _yAllowed;
+            _DM.zDimestion = _zAllowed;
+            _gameManager.GetComponent<GameManager>().globalDimensionsUpdate();
+            _gameManager.GetComponent<GameManager>().updateCamera(cameraDistance, cameraAltitude);
+            _player.GetComponent<PlayerSight>().LookAtCamera(_lookAtCamera);
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (_normalizeX)
+        if (other.tag == "Player")
         {
-            if (Mathf.Abs(transform.position.x - other.transform.position.x) < 0.2f)
-            { 
-                other.GetComponent<CharacterController>().Move(new Vector3(transform.position.x - other.transform.position.x, 0, 0));
-            }
-            if (transform.position.x != other.transform.position.x)
+            if (_normalizeX)
             {
-                other.GetComponent<CharacterController>().Move(new Vector3(transform.position.x - other.transform.position.x, 0, 0).normalized * _normalizeSpeed * Time.deltaTime);
+                if (Mathf.Abs(transform.position.x - other.transform.position.x) < 0.2f)
+                {
+                    other.GetComponent<CharacterController>().Move(new Vector3(transform.position.x - other.transform.position.x, 0, 0));
+                }
+                if (transform.position.x != other.transform.position.x)
+                {
+                    other.GetComponent<CharacterController>().Move(new Vector3(transform.position.x - other.transform.position.x, 0, 0).normalized * _normalizeSpeed * Time.deltaTime);
+                }
             }
-        }
-        if (_normalizeZ)
-        {
-            if (Mathf.Abs(transform.position.z - other.transform.position.z) < 0.2f)
+            if (_normalizeZ)
             {
-                other.GetComponent<CharacterController>().Move(new Vector3(0, 0, transform.position.z - other.transform.position.z));
-            }
-            if (transform.position.z != other.transform.position.z)
-            {
-                other.GetComponent<CharacterController>().Move(new Vector3(0, 0, transform.position.z - other.transform.position.z).normalized * _normalizeSpeed * Time.deltaTime);
+                if (Mathf.Abs(transform.position.z - other.transform.position.z) < 0.2f)
+                {
+                    other.GetComponent<CharacterController>().Move(new Vector3(0, 0, transform.position.z - other.transform.position.z));
+                }
+                if (transform.position.z != other.transform.position.z)
+                {
+                    other.GetComponent<CharacterController>().Move(new Vector3(0, 0, transform.position.z - other.transform.position.z).normalized * _normalizeSpeed * Time.deltaTime);
+                }
             }
         }
     }

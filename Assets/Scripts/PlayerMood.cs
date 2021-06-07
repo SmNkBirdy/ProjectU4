@@ -40,4 +40,22 @@ public class PlayerMood : MonoBehaviour
         modelDizzy.SetActive(false); ;
         modelPleased.SetActive(true); ;
     }
+
+    public void setVisibility(bool boolian)
+    {
+        if (boolian)
+        {
+            modelNormal.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            modelAngry.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            modelDizzy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            modelPleased.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        }
+        else
+        {
+            modelNormal.transform.localScale = new Vector3(0, 0, 0);
+            modelAngry.transform.localScale = new Vector3(0, 0, 0);
+            modelDizzy.transform.localScale = new Vector3(0, 0, 0);
+            modelPleased.transform.localScale = new Vector3(0, 0, 0);
+        }
+    }
 }

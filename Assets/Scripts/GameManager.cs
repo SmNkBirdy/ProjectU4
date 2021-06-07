@@ -6,9 +6,11 @@ public class GameManager : MonoBehaviour
 {
     public GameObject _player;
     public GameObject _camera;
+    public Vector3 savePoint;
     void Start()
     {
         _player = GameObject.Find("Player");
+        savePoint = _player.transform.position;
         _camera = GameObject.Find("Main Camera");
     }
 
