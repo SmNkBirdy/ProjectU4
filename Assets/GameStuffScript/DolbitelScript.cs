@@ -12,6 +12,7 @@ public class DolbitelScript : MonoBehaviour
     public float animtime;
     public float starttime;
     public float globDel;
+    public AudioSource audS;
     private void Start()
     {
         starttime += globDel;
@@ -30,10 +31,14 @@ public class DolbitelScript : MonoBehaviour
         if (starttime + animtime + delay < Time.time)
         {
             starttime = Time.time;
+            audS.Stop();
+            audS.Play();
             currPoint = start.position;
         }
         if (starttime + delay < Time.time)
         {
+            audS.Stop();
+            audS.Play();
             currPoint = end.position;
         }
     }

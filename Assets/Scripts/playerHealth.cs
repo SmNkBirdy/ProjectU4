@@ -15,9 +15,11 @@ public class playerHealth : MonoBehaviour
     private CharacterController controller;
     private CharacterMovement cm;
     private Vector3 horizontalDir;
+    private AudioSource auds;
 
     private void Start()
     {
+        auds = GameObject.Find("takeDamage").GetComponent<AudioSource>();
         pm = gameObject.GetComponent<PlayerMood>();
         controller = gameObject.GetComponent<CharacterController>();
         cm = gameObject.GetComponent<CharacterMovement>();
@@ -100,6 +102,7 @@ public class playerHealth : MonoBehaviour
             horizontalDir = new Vector3(horizontalDir.x, 0, horizontalDir.z);
             Health -= damage;
             daamageTakeTime = Time.time;
+            auds.Play();
         }
     }
 }

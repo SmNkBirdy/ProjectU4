@@ -144,7 +144,7 @@ public class charManager : MonoBehaviour
                 item.GetComponent<Rigidbody>().velocity = (item.transform.position - middle.transform.position).normalized * 5;
                 item.GetComponent<pazzleElement>().enabled = false;
             }
-            gameObject.GetComponent<DataManager>().score += 10;
+            gameObject.GetComponent<DataManager>().score += 3;
             gameObject.GetComponent<DataManager>().saveData();
             winCheck = true;
             winText.SetActive(true);    

@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene2.unity
     guid: eba14948a3043544e9f3faa4937c672c
+  - enabled: 1
+    path: Assets/Scenes/MiniGame2.unity
+    guid: 5e18cfea04ddbc54095cece431eb4939
+  - enabled: 1
+    path: Assets/Scenes/SampleScene3.unity
+    guid: 362d16218b95c2a4a8e0df5f1625915d
   m_configObjects: {}

@@ -56,11 +56,14 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\HudManager.cs" />
     <Compile Include="Assets\Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\GameStuffScript\buttonScript.cs" />
     <Compile Include="Assets\GameStuffScript\platformScript.cs" />
+    <Compile Include="Assets\Scripts\RandomScript.cs" />
     <Compile Include="Assets\GameStuffScript\DolbitelScript.cs" />
     <Compile Include="Assets\GameStuffScript\enemyScipt.cs" />
+    <Compile Include="Assets\Scripts\swapLevel2.cs" />
     <Compile Include="Assets\Scripts\PlayerMood.cs" />
     <Compile Include="Assets\Scripts\SaveSystem.cs" />
     <Compile Include="Assets\GameStuffScript\charMGScript.cs" />
@@ -76,6 +79,7 @@
     <Compile Include="Assets\GameStuffScript\signalTaker.cs" />
     <Compile Include="Assets\GameStuffScript\gateScript.cs" />
     <Compile Include="Assets\Scripts\DataManager.cs" />
+    <Compile Include="Assets\Scripts\UserManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\GameStuffScript\turbineScript.cs" />
     <Compile Include="Assets\GameStuffScript\coinScript.cs" />
@@ -86,9 +90,6 @@
     <Compile Include="Assets\GameStuffScript\damageDealer.cs" />
     <Compile Include="Assets\GameStuffScript\boxScript.cs" />
     <Compile Include="Assets\Scripts\UserData.cs" />
-    <Compile Include="Assets\UserManager.cs" />
-    <Compile Include="Assets\HudManager.cs" />
-    <Compile Include="Assets\Scripts\RandomScript.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

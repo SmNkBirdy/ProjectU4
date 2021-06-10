@@ -9,8 +9,10 @@ public class coinScript : MonoBehaviour
     public DataManager dm;
     public char charText;
     public TextMeshProUGUI charObject;
+    public AudioSource auds;
     void Start()
     {
+        auds = GameObject.Find("coinSound").GetComponent<AudioSource>();
         dm = GameObject.Find("GameManager").GetComponent<DataManager>();
         charObject.text = charText.ToString();
     }
@@ -19,8 +21,9 @@ public class coinScript : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            auds.Play();
             dm.curretChars.Add(charText);
-            dm.score += 2;
+            dm.score += 1;
             gameObject.SetActive(false);
         }
     }

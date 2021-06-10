@@ -34,6 +34,9 @@ public class CharacterMovement : MonoBehaviour
     private PlayerMood pm;
     private PlayerSight ps;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioSource jumpSound;
+
     private void Start()
     {
         Debug.Log((new Vector3(5646,1546,1534).normalized * 5).magnitude);
@@ -49,6 +52,7 @@ public class CharacterMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jump();
+            jumpSound.Play();
         }
     }
 
