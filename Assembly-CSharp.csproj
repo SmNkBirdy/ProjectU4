@@ -90,6 +90,10 @@
     <Compile Include="Assets\GameStuffScript\damageDealer.cs" />
     <Compile Include="Assets\GameStuffScript\boxScript.cs" />
     <Compile Include="Assets\Scripts\UserData.cs" />
+    <Compile Include="Assets\MenuManager.cs" />
+    <Compile Include="Assets\debugCheck.cs" />
+    <Compile Include="Assets\winGame.cs" />
+    <Compile Include="Assets\Quit.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

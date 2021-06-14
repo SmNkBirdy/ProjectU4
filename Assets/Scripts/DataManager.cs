@@ -77,6 +77,7 @@ public class DataManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("id", 0);
         }
+
         if (PlayerPrefs.GetInt("id") != 0)
         {
             id = PlayerPrefs.GetInt("id");
